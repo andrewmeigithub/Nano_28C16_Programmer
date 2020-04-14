@@ -7,7 +7,7 @@ Thanks to Liam Ilan for helping me with git. https://github.com/liam-ilan
 The file [Nano_28C16_Programmer.ino](https://github.com/andrewmeigithub/Nano_28C16_Programmer/blob/master/Nano_28C16_Programmer.ino) programs a 28C16 EEPROM using an Arduino Nano. It reads the EEPROM after writing and prints the values you wrote onto the EEPROM onto the serial monitor. **This only prints the first 256 addresses**. To change the number of addresses printed, change the integer printAddress on line 77.
 
 ## Circuit Diagram:
-![Circuit Diagram](C:\Users\Andrew Mei\Documents\Arduino\Projects\Nano_28C16_Programmer\Nano_28C16_Programmer_Circuit_Diagram.png)
+<img src="https://raw.githubusercontent.com/andrewmeigithub/Nano_28C16_Programmer/master/DirectoryPath/Nano_28C16_Programmer_Circuit_Diagram.png?raw=true">
 
 ## How to Use:
 The Arduino Nano must be connected to the computer to program the 28C16
