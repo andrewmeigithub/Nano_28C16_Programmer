@@ -68,13 +68,14 @@ void writeEEPROM(int address, byte data) {
 
 
 
-//Prints data in first 256 addresses onto serial monitor
+//Prints data in first printAdresses amount of addresses onto serial monitor
 void printContents() {
   //Creates a list (called "data") which contains 16 bytes of EEPROM's data
   /*
-   * Change 256 (in for loop) to print data in that number of addresses. Number must be divisible by the number of bytes per line (default:8)
+   * Change printAdresses to print data in that number of addresses. Number must be divisible by the number of bytes per line (default:8)
    */
-  for (int rowOfBytes = 0; rowOfBytes < 256; rowOfBytes += 8) {
+  int printAdresses = 256;
+  for (int rowOfBytes = 0; rowOfBytes < printAdresses; rowOfBytes += 8) {
     byte data[8]; //8 addresses each line 
 
     for (int BIT = 0; BIT <= 7; BIT++) {
@@ -113,9 +114,9 @@ void setup() {
   pinModeFast(WR_EN_ACTIVE_LOW, OUTPUT);
   Serial.begin(57600);
 
-  clearEEPROM();
+  //clearEEPROM();
 
-  // Write into data bytes
+  // Write into EEPROM from data[] array 
   Serial.print("Programming EEPROM");
   for (int address = 0; address < sizeof(data); address++) {
     writeEEPROM(address, data[address]);
@@ -128,7 +129,5 @@ void setup() {
   Serial.println("Reading EEPROM...");
   printContents();
 }
-
-
 
 void loop() {}
