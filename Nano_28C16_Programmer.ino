@@ -55,7 +55,7 @@ void writeEEPROM(int address, byte data) {
     digitalWriteFast(pin, data & 1); //ANDing data with 1 only ANDs the last digit
     data = data >> 1; //shifts to the next bit
   }
-  //120ns WR_EN pulse (has to be between 100-1000ns)
+  //120ns WR_EN pulse (recommended between 100-1000ns)
   digitalWriteFast(WR_EN_ACTIVE_LOW, LOW);
   digitalWriteFast(WR_EN_ACTIVE_LOW, HIGH);
   
